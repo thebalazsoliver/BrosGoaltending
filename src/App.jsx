@@ -231,7 +231,7 @@ export default function App() {
         />
         <div className="hero__shade" />
         <div className="hero__content shell">
-          <p className="eyebrow eyebrow--light">Jégkorong kapusiskola · 2024 óta</p>
+          <p className="eyebrow eyebrow--light">Jégkorong kapusfejlesztés · 2024 óta</p>
           <h1>
             A kapusban
             <span>több van.</span>
