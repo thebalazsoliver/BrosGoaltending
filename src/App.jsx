@@ -9,6 +9,7 @@ const trainingTypes = [
     lead: "Minden perc a te játékodról szól.",
     text: "Személyre szabott, posztspecifikus munka a technikai részletekre, a helyezkedésre és a magabiztos döntésekre építve.",
     tags: ["Személyes fókusz", "Azonnali visszajelzés"],
+    href: "#jelentkezes",
   },
   {
     number: "02",
@@ -16,6 +17,7 @@ const trainingTypes = [
     lead: "Kis létszám. Magas intenzitás.",
     text: "Egymásra épülő gyakorlatok és meccsszerű szituációk olyan közegben, ahol a kapusok egymást is jobb teljesítményre ösztönzik.",
     tags: ["Kis csoport", "Meccstempó"],
+    href: "#jelentkezes",
   },
   {
     number: "03",
@@ -23,6 +25,7 @@ const trainingTypes = [
     lead: "Egy teljes hét a fejlődésért.",
     text: "Komplex kapusprogram koncentrált jégmunkával, szárazedzéssel, közös élményekkel és napi, érthető szakmai iránymutatással.",
     tags: ["Komplex program", "Közösségi élmény"],
+    href: "/taboraink",
   },
 ];
 
@@ -58,32 +61,32 @@ const menuCards = [
     title: "Képzések",
     className: "nav-card--red",
     links: [
-      ["Egyéni képzés", "#kepzesek"],
-      ["Hétvégi kiscsoport", "#kepzesek"],
-      ["Nyári tábor", "#kepzesek"],
+      ["Egyéni képzés", "/#kepzesek"],
+      ["Hétvégi kiscsoport", "/#kepzesek"],
+      ["Táboraink", "/taboraink"],
     ],
   },
   {
     title: "Az iskola",
     className: "nav-card--graphite",
     links: [
-      ["Bemutatkozás", "#bemutatkozas"],
-      ["Kis történetünk", "#tortenet"],
-      ["Edzők", "#edzok"],
-      ["Vélemények", "#velemenyek"],
+      ["Bemutatkozás", "/#bemutatkozas"],
+      ["Kis történetünk", "/#tortenet"],
+      ["Edzők", "/#edzok"],
+      ["Vélemények", "/#velemenyek"],
     ],
   },
   {
     title: "Kapcsolat",
     className: "nav-card--light",
     links: [
-      ["Jelentkezés", "#jelentkezes"],
+      ["Jelentkezés", "/#jelentkezes"],
       ["Instagram", "https://www.instagram.com/bro.sgoaltending/"],
     ],
   },
 ];
 
-function Arrow() {
+export function Arrow() {
   return <span aria-hidden="true">↗</span>;
 }
 
@@ -105,7 +108,7 @@ function InstagramIcon() {
   );
 }
 
-function CardNavigation() {
+export function CardNavigation() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -133,12 +136,12 @@ function CardNavigation() {
             <span />
           </button>
 
-          <a className="nav-brand" href="#top" onClick={closeMenu}>
+          <a className="nav-brand" href="/" onClick={closeMenu}>
             <img src="/bros-logo.webp" alt="" />
             <span>BROS&apos;S GOALTENDING</span>
           </a>
 
-          <a className="nav-cta" href="#jelentkezes" onClick={closeMenu}>
+          <a className="nav-cta" href="/#jelentkezes" onClick={closeMenu}>
             Jelentkezés <Arrow />
           </a>
         </div>
@@ -231,7 +234,7 @@ export default function App() {
         />
         <div className="hero__shade" />
         <div className="hero__content shell">
-          <p className="eyebrow eyebrow--light">Jégkorong kapusfejlesztés · 2024 óta</p>
+          <p className="eyebrow eyebrow--light">Jégkorong kapusiskola · 2024 óta</p>
           <h1>
             A kapusban
             <span>több van.</span>
@@ -313,7 +316,12 @@ export default function App() {
 
         <div className="training-grid">
           {trainingTypes.map((training) => (
-            <article className="training-card" key={training.number}>
+            <a
+              className="training-card"
+              href={training.href}
+              key={training.number}
+              aria-label={`${training.title} – részletek`}
+            >
               <div className="training-card__top">
                 <span>{training.number}</span>
                 <Arrow />
@@ -326,7 +334,7 @@ export default function App() {
               <ul>
                 {training.tags.map((tag) => <li key={tag}>{tag}</li>)}
               </ul>
-            </article>
+            </a>
           ))}
         </div>
       </section>
