@@ -29,7 +29,7 @@ export default function CampsPage() {
         <img
           className="camp-hero__image"
           src="/bros-team.webp"
-          alt="A Bros's Goaltending kapusai és edzői az Óbudai Jégcsarnokban"
+          alt="A Bro's Goaltending kapusai és edzői az Óbudai Jégcsarnokban"
         />
         <div className="camp-hero__shade" />
         <div className="camp-hero__content shell">
@@ -77,9 +77,8 @@ export default function CampsPage() {
         </div>
 
         <div className="camp-facts">
-          {campFacts.map((fact, index) => (
+          {campFacts.map((fact) => (
             <article className={`camp-fact ${fact.label === "Ár" ? "camp-fact--price" : ""}`} key={fact.label}>
-              <span>0{index + 1}</span>
               <p>{fact.label}</p>
               <h3>{fact.value}</h3>
               <small>{fact.detail}</small>
@@ -103,9 +102,9 @@ export default function CampsPage() {
       <footer className="site-footer">
         <div className="footer-main shell">
           <div className="footer-brand">
-            <img src="/bros-logo.webp" alt="Bros's Goaltending logó" />
+            <img src="/bros-logo.webp" alt="Bro's Goaltending logó" />
             <div>
-              <strong>BROS&apos;S<br />GOALTENDING</strong>
+              <strong>BRO&apos;S<br />GOALTENDING</strong>
               <span>Goalie development · Since 2024</span>
             </div>
           </div>
@@ -120,13 +119,13 @@ export default function CampsPage() {
             <a href="#reszletek">Részletek</a>
             <a href="/#jelentkezes">Jelentkezés</a>
             <a href="https://www.instagram.com/bro.sgoaltending/" target="_blank" rel="noreferrer">
-              Instagram <Arrow />
+              Instagram
             </a>
           </div>
         </div>
         <div className="footer-bottom shell">
-          <span>© {new Date().getFullYear()} Bros&apos;s Goaltending</span>
-          <a href="#top">Vissza az elejére <Arrow direction="up" /></a>
+          <span>© 2024 Bro&apos;s Goaltending</span>
+          <a href="#top">Vissza az elejére</a>
         </div>
       </footer>
     </main>
