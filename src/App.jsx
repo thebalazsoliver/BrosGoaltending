@@ -153,7 +153,7 @@ export function CardNavigation() {
 
           <a className="nav-brand" href="/" onClick={closeMenu}>
             <img src="/bros-logo.webp" alt="" />
-            <span>BROS&apos;S GOALTENDING</span>
+            <span>BRO&apos;S GOALTENDING</span>
           </a>
 
           <a className="nav-cta" href="/#jelentkezes" onClick={closeMenu}>
@@ -245,7 +245,7 @@ export default function App() {
         <img
           className="hero__image"
           src="/bros-team.webp"
-          alt="A Bros's Goaltending kapusai és edzői a jégen"
+          alt="A Bro's Goaltending kapusai és edzői a jégen"
         />
         <div className="hero__shade" />
         <div className="hero__content shell">
@@ -280,7 +280,7 @@ export default function App() {
           <p>Bemutatkozás</p>
         </div>
         <div className="intro-copy">
-          <p className="eyebrow">Bros&apos;s Goaltending</p>
+          <p className="eyebrow">Bro&apos;s Goaltending</p>
           <h2>Három edző.<br />Egy közös szemlélet.</h2>
           <div className="intro-copy__text">
             <p>
@@ -305,7 +305,7 @@ export default function App() {
             <p className="eyebrow eyebrow--red">Kis történetünk</p>
             <h2>Barátságból<br />közös küldetés.</h2>
             <p>
-              A Bros&apos;s Goaltendinget Tóth Balázs, Márkus Levente és Horváth André
+              A Bro&apos;s Goaltendinget Tóth Balázs, Márkus Levente és Horváth André
               alapította. A közös gondolat egyszerű volt: olyan kapusképzést létrehozni,
               ahol a szakmai igényesség, a személyes figyelem és a jó közösség ugyanannyira fontos.
             </p>
@@ -374,7 +374,7 @@ export default function App() {
                   <img
                     className={`coach-card__image ${coach.imageClass}`}
                     src={coach.image}
-                    alt={`${coach.name}, a Bros's Goaltending alapító kapusedzője`}
+                    alt={`${coach.name}, a Bro's Goaltending alapító kapusedzője`}
                   />
                   <i>{coach.number}</i>
                 </div>
@@ -404,7 +404,7 @@ export default function App() {
           </p>
           <div>
             <strong>Valódi történetek hamarosan</strong>
-            <span>Bros&apos;s Goaltending</span>
+            <span>Bro&apos;s Goaltending</span>
           </div>
         </div>
       </section>
@@ -488,7 +488,7 @@ export default function App() {
           <div className="footer-brand">
             <img src="/bros-logo.webp" alt="Bros's Goaltending logó" />
             <div>
-              <strong>BROS&apos;S<br />GOALTENDING</strong>
+              <strong>BRO&apos;S<br />GOALTENDING</strong>
               <span>Goalie development · Since 2024</span>
             </div>
           </div>
@@ -515,7 +515,7 @@ export default function App() {
           </div>
         </div>
         <div className="footer-bottom shell">
-          <span>© {new Date().getFullYear()} Bros&apos;s Goaltending</span>
+          <span>© {new Date().getFullYear()} Bro&apos;s Goaltending</span>
           <a href="#top">Vissza az elejére <Arrow direction="up" /></a>
         </div>
       </footer>
