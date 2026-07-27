@@ -86,8 +86,23 @@ const menuCards = [
   },
 ];
 
-export function Arrow() {
-  return <span aria-hidden="true">↗</span>;
+export function Arrow({ direction = "right" }) {
+  const paths = {
+    right: "M4 10h11m-4-4 4 4-4 4",
+    left: "M16 10H5m4-4-4 4 4 4",
+    up: "M10 16V5m-4 4 4-4 4 4",
+  };
+
+  return (
+    <svg
+      className={`arrow-icon arrow-icon--${direction}`}
+      viewBox="0 0 20 20"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <path d={paths[direction] || paths.right} />
+    </svg>
+  );
 }
 
 function FacebookIcon() {
@@ -142,7 +157,7 @@ export function CardNavigation() {
           </a>
 
           <a className="nav-cta" href="/#jelentkezes" onClick={closeMenu}>
-            Jelentkezés <Arrow />
+            Jelentkezés
           </a>
         </div>
 
@@ -246,7 +261,7 @@ export default function App() {
             </p>
             <div className="hero__actions">
               <a className="button button--red" href="#jelentkezes">
-                Jelentkezem <Arrow />
+                Jelentkezem
               </a>
               <a className="button button--glass" href="#kepzesek">
                 Képzések
@@ -459,7 +474,7 @@ export default function App() {
               <span>Hozzájárulok, hogy a megadott adataimat a kapcsolatfelvételhez kezeljék.</span>
             </label>
             <button className="button button--red button--full" type="submit" disabled={formStatus.type === "loading"}>
-              {formStatus.type === "loading" ? "Küldés…" : "Jelentkezés elküldése"} <Arrow />
+              {formStatus.type === "loading" ? "Küldés…" : "Jelentkezés elküldése"}
             </button>
             {formStatus.message && (
               <p className={`form-status form-status--${formStatus.type}`} role="status">{formStatus.message}</p>
@@ -501,7 +516,7 @@ export default function App() {
         </div>
         <div className="footer-bottom shell">
           <span>© {new Date().getFullYear()} Bros&apos;s Goaltending</span>
-          <a href="#top">Vissza az elejére ↑</a>
+          <a href="#top">Vissza az elejére <Arrow direction="up" /></a>
         </div>
       </footer>
     </main>
