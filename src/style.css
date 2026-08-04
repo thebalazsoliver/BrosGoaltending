@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Oswald:wght@600;700&display=swap");
+@import "tailwindcss";
+
 :root {
   --black: #0d0d0e;
   --charcoal: #242425;
@@ -1015,8 +1017,25 @@ a:focus-visible, button:focus-visible {
   .camp-intro::before { top: 36px; right: -10px; font-size: 26vw; }
   .camp-fact { min-height: 180px; padding: 24px; }
   .camp-fact h3 { font-size: 32px; }
-  .coach-grid { grid-template-columns: 1fr; }
-  .coach-card__portrait { height: 410px; }
+  .coach-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
+  }
+  .coach-card__portrait { height: clamp(145px, 45vw, 205px); }
+  .coach-card__meta {
+    min-height: 92px;
+    padding: 12px 8px;
+    border-top-width: 3px;
+  }
+  .coach-card h3 {
+    font-size: clamp(14px, 4.2vw, 18px);
+    line-height: 1.08;
+  }
+  .coach-card__meta p {
+    margin-top: 5px;
+    font-size: 8px;
+    line-height: 1.35;
+  }
   .review-placeholder { min-height: 390px; padding: 28px; }
   .review-placeholder > p { font-size: 23px; }
   .review-placeholder > div { flex-direction: column; }
@@ -1025,8 +1044,17 @@ a:focus-visible, button:focus-visible {
   .form-row { grid-template-columns: 1fr; gap: 0; }
   .apply-socials { margin-top: 35px; }
   .site-footer { padding-top: 52px; }
-  .footer-main { grid-template-columns: 1fr; gap: 28px; padding-bottom: 44px; }
-  .footer-brand { grid-column: auto; gap: 16px; }
+  .footer-main {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 24px;
+    row-gap: 28px;
+    padding-bottom: 44px;
+  }
+  .footer-brand { grid-column: 1 / -1; gap: 16px; }
+  .footer-main > .footer-column:last-child {
+    align-items: flex-end;
+    text-align: right;
+  }
   .footer-brand img { width: 88px; height: 88px; }
   .footer-brand strong { font-size: 34px; }
   .footer-bottom { align-items: flex-start; flex-direction: column; justify-content: center; gap: 8px; }
